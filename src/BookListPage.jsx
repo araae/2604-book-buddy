@@ -23,7 +23,13 @@ export default function BookListPage() {
       <ul>
         {books.map((book) => (
           <li key={book.id}>
-            <Link to={"/books/" + book.id}>{book.title}</Link>
+            <Link to={"/books/" + book.id}>
+              <img src={book.coverimage} alt={"Cover image of " + book.title} />
+              <div>
+                <p>{book.title}</p>
+                <p>{book.author}</p>
+              </div>
+            </Link>
           </li>
         ))}
       </ul>

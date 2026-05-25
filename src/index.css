@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+  background-color: #fff8f5;
+  color: #1a1a2e;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.75rem;
+  margin-bottom: 1.5rem;
+  background-color: #1a1a2e;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+}
+
+header a {
+  color: #ffffff;
+}
+
+header a:hover {
+  color: #ffb899;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+a {
+  color: #1a1a2e;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+  color: #1a1a2e;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: #1a1a2e;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 1rem 0;
+  border-bottom: 0.0625rem solid #ffd5c0;
+}
+
+li a {
+  color: #1a1a2e;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 1.1rem;
+}
+
+li img {
+  width: 5rem;
+  height: 7rem;
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
+
+li p:first-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+li p:last-child {
+  font-size: 1rem;
+  color: #444;
+}
+
+button {
+  background: #1a1a2e;
+  color: #ffb899;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  margin-top: 0.625rem;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: #2d2d4e;
+}
+
+button:disabled {
+  background: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 25rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 1rem;
+}
+
+input {
+  padding: 0.625rem;
+  border: 0.125rem solid #1a1a2e;
+  border-radius: 0.375rem;
+  background: #fff8f5;
+  color: #1a1a2e;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: #ffb899;
+}
+
+p[role="alert"] {
+  color: #b30000;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 37.5rem) {
+  body {
+    padding: 0.75rem;
+  }
+
+  header {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  li img {
+    width: 3rem;
+    height: 4rem;
+  }
+}
