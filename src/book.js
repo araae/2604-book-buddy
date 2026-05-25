@@ -16,6 +16,24 @@ export async function getBook(id) {
   return result.book;
 }
 
+//create a function to get the logged in users account info
+export async function getUser(token) {
+  const response = await fetch(API + "/users/me", {
+    headers: { Authorization: "Bearer " + token },
+  });
+  const result = await response.json();
+  return result.user;
+}
+
+//create a function to get the logged in users reservations
+export async function getReservations(token) {
+  const response = await fetch(API + "/users/me/reservations", {
+    headers: { Authorization: "Bearer " + token },
+  });
+  const result = await response.json();
+  return result.reservations;
+}
+
 //send a patch request to the server to update a books availability
 //attach the users token in the headers to show they are logged in
 //return the updated book
