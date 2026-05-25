@@ -1,7 +1,7 @@
 //import useState, useEffect, Link, getBooks
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
-import { getBooks } from "./books";
+import { getBooks } from "./book";
 
 //create a state to store the books
 //get all books from the API when the component loads
@@ -12,7 +12,7 @@ export default function BookListPage() {
   useEffect(() => {
     const fetchBooks = async () => {
       const data = await getBooks();
-      setBooks(data);
+      setBooks(data ?? []);
     };
     fetchBooks();
   }, []);

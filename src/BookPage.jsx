@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { useAuth } from "./AuthContext";
-import { getBook, reserveBook } from "./books";
+import { getBook, reserveBook } from "./book";
 
 //create a state to store the book
 //create a state to store error messages

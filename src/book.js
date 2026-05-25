@@ -5,7 +5,7 @@ const API = "https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api";
 export async function getBooks() {
   const response = await fetch(API + "/books");
   const result = await response.json();
-  return result.books;
+  return result;
 }
 
 //create a function to get a book using its id
