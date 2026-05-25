@@ -10,42 +10,37 @@ export async function getBooks() {
 
 //create a function to get a book using its id
 //get a book from the server using its id
-
 export async function getBook(id) {
   const response = await fetch(API + "/books/" + id);
   const result = await response.json();
   return result.book;
 }
 
-//create a function that reserves a book for a logged in user
-//send a patch request to the server to update the book
+//send a patch request to the server to update a books availability
 //attach the users token in the headers to show they are logged in
-//tell user if book is available
-export async function reserveBook(token, id) {
+//return the updated book
+async function updateAvailability(token, id, available) {
   const response = await fetch(API + "/books/" + id, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
       Authorization: "Bearer " + token,
     },
-    body: JSON.stringify({ available: false }),
+    body: JSON.stringify({ available: available }),
   });
   const result = await response.json();
   return result.book;
+}
+
+//create a function that reserves a book for a logged in user
+export async function reserveBook(token, id) {
+  return await updateAvailability(token, id, false);
 }
 
 //create a function to return a book the user has reserved
-//tell the server to mark this book as available again
-
 export async function returnBook(token, id) {
-  const response = await fetch(API + "/books/" + id, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Bearer " + token,
-    },
-    body: JSON.stringify({ available: true }),
-  });
-  const result = await response.json();
-  return result.book;
+  return await updateAvailability(token, id, true);
 }
+
+//after consulting friends i realized my old code, reservebook and returnbook both had the full fetch request
+//written out, now they both just call the same function with different values
